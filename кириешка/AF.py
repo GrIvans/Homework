@@ -1,0 +1,37 @@
+def f(i):
+    x = i.rfind(' ')
+    return(i[:x])
+
+
+text = open('input.txt', encoding='utf-8').readlines()
+text.sort(key=f)
+parties = {}
+summa_ballov = 0
+for line in text:
+    x = line.split()
+    i = line.rfind(' ')
+    parti = line[:i]
+    parties[parti] = parties.get(parti, 0) + int(x[-1])
+    summa_ballov += int(x[-1])
+
+izb_chislo = summa_ballov / 450
+
+kol_mest = 0
+for i in parties:
+    mest = parties[i] / izb_chislo
+    drob = mest - int(mest)
+    parties[i] = (int(mest), drob)
+    kol_mest += int(mest)
+
+if kol_mest == 450:
+    for i in sorted(parties, key=parties.get):
+        print(i + ' ' + str(parties[i][0]))
+else:
+    num = 450 - kol_mest
+    for i in sorted(parties, key=lambda x: parties.get(x)[1], reverse=1):
+        if num != 0:
+            parties[i][0] += 1
+            num -= 1
+        else:
+            break
+print(parties)
