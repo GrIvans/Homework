@@ -23,12 +23,3 @@ elif dlina_uchenik > kol_zachisleniy:
     proh_ball = ucheniki[kol_zachisleniy - 1][1]
     if proh_ball > ucheniki[kol_zachisleniy][1]:
         print(ucheniki[kol_zachisleniy - 1][1])
-    else:
-        for n in range(kol_zachisleniy):
-            if proh_ball == ucheniki[n][1]:
-                if n == 1:
-                    print(ucheniki[0][1])
-                    break
-                else:
-                    print(ucheniki[n - 1][1])
-                    break
