@@ -23,3 +23,5 @@ elif dlina_uchenik > kol_zachisleniy:
     proh_ball = ucheniki[kol_zachisleniy - 1][1]
     if proh_ball > ucheniki[kol_zachisleniy][1]:
         print(ucheniki[kol_zachisleniy - 1][1])
+    else:
+        print(ucheniki[kol_zachisleniy])
