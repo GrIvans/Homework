@@ -13,4 +13,3 @@ if len(ansv_dict[result[0]]) == 1:
     fout.write(*ansv_dict[result[0]])
 else:
     fout.write(str(len(ansv_dict[result[0]])))
-    fout.write(str(len(ansv_dict[result[1]])))

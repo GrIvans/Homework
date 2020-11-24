@@ -1,4 +1,1 @@
-Input file contains:
-108 letters
-20 words
-4 lines
+2
