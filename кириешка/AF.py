@@ -20,7 +20,7 @@ kol_mest = 0
 for i in parties:
     mest = parties[i] / izb_chislo
     drob = mest - int(mest)
-    parties[i] = (int(mest), drob)
+    parties[i] = [int(mest), drob]
     kol_mest += int(mest)
 
 if kol_mest == 450:
@@ -28,10 +28,15 @@ if kol_mest == 450:
         print(i + ' ' + str(parties[i][0]))
 else:
     num = 450 - kol_mest
-    for i in sorted(parties, key=lambda x: parties.get(x)[1], reverse=1):
-        if num != 0:
-            parties[i][0] += 1
-            num -= 1
-        else:
-            break
-print(parties)
+    while i in sorted(parties, key=lambda x: parties.get(x)[1], reverse=0) and num != 0:
+        m = []
+        k = 0
+        for n in parties[i]:
+            m.append(n)
+            k += 1
+        m[0] += 1
+        parties[i] = m 
+        num -= 1
+
+for l in sorted(parties, key=parties.get):
+    print(str(l) + ' ' + str(parties[l][0]))
