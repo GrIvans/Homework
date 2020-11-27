@@ -1,10 +1,4 @@
-def f(i):
-    x = i.rfind(' ')
-    return(i[:x])
-
-
 text = open('input.txt', encoding='utf-8').readlines()
-text.sort(key=f)
 parties = {}
 summa_ballov = 0
 for line in text:
@@ -23,20 +17,11 @@ for i in parties:
     parties[i] = [int(mest), drob]
     kol_mest += int(mest)
 
-if kol_mest == 450:
-    for i in sorted(parties, key=parties.get):
-        print(i + ' ' + str(parties[i][0]))
-else:
+if kol_mest != 450:
     num = 450 - kol_mest
-    while i in sorted(parties, key=lambda x: parties.get(x)[1], reverse=0) and num != 0:
-        m = []
-        k = 0
-        for n in parties[i]:
-            m.append(n)
-            k += 1
-        m[0] += 1
-        parties[i] = m 
+    while i in sorted(parties, key=lambda x: parties.get(x)[1], reverse=1) and num != 0:
+        parties[i][0] += 1
         num -= 1
 
-for l in sorted(parties, key=parties.get):
+for l in (parties):
     print(str(l) + ' ' + str(parties[l][0]))
