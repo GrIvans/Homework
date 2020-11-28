@@ -19,7 +19,3 @@ if dlina_uchenik == 0:
     print(0)
 elif dlina_uchenik <= kol_zachisleniy:
     print(1)
-elif dlina_uchenik > kol_zachisleniy:
-    proh_ball = ucheniki[kol_zachisleniy - 1][1]
-    if proh_ball > ucheniki[kol_zachisleniy][1]:
-        print(ucheniki[kol_zachisleniy - 1][1])
