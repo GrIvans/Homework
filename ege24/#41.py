@@ -10,4 +10,8 @@ for i in s:
         len_s = 0
 if len_s != 0:
     ansv.append(len_s)
-print(ansv)
+num = 1
+for i in ansv:
+    st = (i * 'c').title()
+    print(num, i, st)
+    num += 1    
