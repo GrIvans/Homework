@@ -1,4 +1,4 @@
-s = open('24data/24.txt').read()
+s = open('24data/24-4.txt').read()
 
 k = 0
 mx = 0
