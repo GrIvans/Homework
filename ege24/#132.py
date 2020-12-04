@@ -1,13 +1,13 @@
-s = open('input.txt', 'r',encoding='utf-8').read()
+s = open('24data/24-J1.txt', 'r').read()
 
 k = 0
 mx = 0
-#не работает
-for i in range(len(s) - 2):
-    if s[i] == 'K' and\
-        s[i + 1] == 'O' and\
-        s[i + 2] == 'T':
+s = s.replace('КОТ', '1')
+ans = []
+for i in s:
+    if i == '1':
         k += 1
     else:
-        mx = max(mx, k)
-print(k)
+        mx = max(k, mx)
+        k = 0
+print(max(mx, k))

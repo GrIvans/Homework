@@ -1,18 +1,19 @@
 s = open('24data/24-1.txt').read()
-m = ''
-mx = ''
-n = 1
-mn = 1
+
+k = 1
+mx = 0
+imx = 0
+p = 0
 for i in range(len(s) - 1):
-    if ord(s[i]) < ord(s[i + 1]):
-        if m == '':
-            n = i + 1
-        m += s[i]
+    if s[i] < s[i + 1]: 
+        k += 1
     else:
-        m += s[i]
-        if len(m) > len(mx):
-            mx = m
-            mn = n
-        m = ''
-        n = 1
-print(mn)
+        if k > mx:
+            mx = k
+            imx = p
+        k = 1
+        p = i
+if k > mx:
+    imx = p
+    mx = k
+print(imx + 1)
