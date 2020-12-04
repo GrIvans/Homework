@@ -1,4 +1,4 @@
-s = open('24data/24-J1.txt').read()
+s = open('input.txt', 'r',encoding='utf-8').read()
 
 k = 0
 mx = 0
