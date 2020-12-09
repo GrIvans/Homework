@@ -1,5 +1,5 @@
 # не работает
-s = open('24data/24-J4.txt').read()
+s = open('input.txt').read()
 s = s.replace('JBOSS', ' ')
 s = s.replace('BOSSJ', ' ')
 s = s.replace('JBOSSJ', ' ')
