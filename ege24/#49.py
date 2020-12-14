@@ -1,5 +1,5 @@
 s = open('24data/k7-m24.txt').read()
-s += '&'
+s += '{'
 k = 0
 
 for i in range(len(s) - 2):
