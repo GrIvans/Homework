@@ -1,5 +1,5 @@
 #не работает
-data = open('26data/26-j1.txt').readlines()
+data = open('26data/26-J1.txt').readlines()
 #data = open('input.txt').readlines()
 del data[0]
 data = sorted(list(map(int, data)))
