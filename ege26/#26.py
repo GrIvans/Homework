@@ -1,15 +1,9 @@
-#не работает
-data = open('26data/26-J1.txt').readlines()
-#data = open('input.txt').readlines()
-del data[0]
-data = sorted(list(map(int, data)))
-
-kolvo = 0
-for cost in (data):
-    for val in (data):
-        if cost + val == 100 and data.index(val) != data.index(cost):
-            kolvo += 1
-            data.remove(val)
-            data.remove(cost)
-            break
-print(kolvo)
+a = open('26data/26-J1.txt').readlines()
+n = int(a[0])
+k = 0
+for i in range(1, n - 1):
+    for j in range(i + 1, n):
+        if int(a[i]) + int(a[j]) == 100:
+            a[i], a[j] = 0, 0
+            k += 1
+print(k)
