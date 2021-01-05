@@ -6,4 +6,4 @@ data = data[1:]
 data = list(map(int, data))
 
 for i in range(len(data)):
-    
+    pass
