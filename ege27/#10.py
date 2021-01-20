@@ -2,7 +2,7 @@
 data = open('27data/10/27-10b.txt')
 #data = open('input.txt')
 # 1--15062
-# 2--45226420 неверно | (45226419)-верно
+# 2--45226419
 kolvo = int(data.readline())
 
 summa = 0
@@ -13,11 +13,14 @@ for i in range(kolvo):
     a, b, c = max(a, b, c), min(a, b, c), a + b + \
         c - max(a, b, c) - min(a, b, c)
     summa += a
-    if abs(a - b) != 0:
-        an.append(abs(a - b))
-    if abs(a - c) != 0:
-        an.append(abs(a - c))
-    razn = min(razn, min(an))
+    if a == b:
+        d = a - c
+        if d % 4 > 0:
+            razn = min(razn, d)
+    else:
+        d = a - b
+        if d % 4 > 0:
+            razn = min(razn, d)
 if summa % 4 != 0:
     print(summa)
 else:

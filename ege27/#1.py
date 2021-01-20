@@ -9,9 +9,9 @@ for i in range(kolvo):
     a, b = map(int, data.readline().split())
     summa += min(a, b)
     d = abs(a - b)
-    if d != 0:
+    if d % 3 > 0:
         minRazn = min(minRazn, d)
 if summa % 3 != 0:
     print(summa)
 else:
-    print(summa - d)
+    print(summa + minRazn)
