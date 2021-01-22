@@ -6,3 +6,4 @@ for a in range(1, 201):
     if fl:
         print(a)
 #neverno
+#ДЕЛ(120, A) /\ ((ДЕЛ(x, 70) /\ ДЕЛ(x, 30)) → ДЕЛ(x, A))
