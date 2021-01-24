@@ -6,4 +6,4 @@ for a in range(1, 1001):
                 fl = False
     if fl:
         print(a)
-#ans--48 верно
+# ans--48 верно
