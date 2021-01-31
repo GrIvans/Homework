@@ -3,7 +3,6 @@ for a in range(1, 1001):
     for x in range(1, 1001):
         if ((x & a == 0) or (x & 30 != 0 or x % 20 != 0)) == False:
             fl = False
-            break
     if fl:
         print(a)
 #ans--31 (30)
