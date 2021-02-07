@@ -1,2 +1,0 @@
-def t(a):
-    pass
