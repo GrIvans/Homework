@@ -1,23 +1,24 @@
 data = open('27data/4/27-4a.txt')
-# 1--123430 неверно
-# 2--402332230 верно
 data = open('27data/4/27-4b.txt')
 #data = open('input.txt')
-
-kolvo = int(data.readline())
-summa = 0
-minrazn = []
-for i in range(kolvo):
+D = 5
+n = int(data.readline())
+s, dMin = 0, [10001] * D
+for i in range(n):
     a, b = map(int, data.readline().split())
-    summa += max(a, b)
+    s += max(a, b)
     d = abs(a - b)
-    if d != 0 and d % 5 != 0:
-        minrazn.append(d)
-minrazn.sort()
-if summa % 5 == 0:
-    print(summa)
+    r = d % D
+    if r > 0:
+        dMinNew = dMin[:]
+        for k in range(1, D):
+            r0 = (r + k) % D
+            dMinNew[r0] = min(d + dMin[k], dMin[r0])
+        dMinNew[r] = min(d, dMin[r])
+        dMin = dMinNew[:]
+if s % D == 0:
+    print(s)
 else:
-    for i in minrazn:
-        if (summa - i) % 5 == 0:
-            print(summa - i)
-            break
+    print(s - dMin[(s % D)])
+# 1==123720 verno
+# 2==402332230 verno

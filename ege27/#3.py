@@ -1,22 +1,26 @@
 data = open('27data/3/27-3a.txt')
-#data = open('27data/3/27-3b.txt')
+data = open('27data/3/27-3b.txt')
 #data = open('input.txt')
-#1--66480 неправильно
-#2--203412732 верно
-kolvo = int(data.readline())
-
-summa, minRazn = 0, []
-for i in range(kolvo):
+D = 3
+s = 0
+dMin = [10001] * D
+n = int(data.readline())
+for i in range(n):
     a, b = map(int, data.readline().split())
-    summa += min(a, b)
+    s += min(a, b)
     d = abs(a - b)
-    if d != 0:
-        minRazn.append(d)
-minRazn.sort()
-if summa % 3 == 0:
-    print(summa)
+    r = d % D
+    if r > 0:
+        dMinNew = dMin[:]
+        for k in range(1, D):
+            r0 = (r + k) % D
+            dMinNew[r0] = min(d + dMin[k], dMin[r0])
+        dMinNew[r] = min(d, dMin[r])
+        dMin = dMinNew[:]
+
+if s % D == 0:
+    print(s)
 else:
-    for i in (minRazn):
-        if (i + summa) % 3 == 0:
-            print(i + summa)
-            break
+    print(s + dMin[D - (s % D)])
+# 1==66228 neverno
+# 2==203412732 verno
