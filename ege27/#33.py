@@ -1,20 +1,26 @@
 data = open('27data/33/27-33a.txt')
 data = open('27data/33/27-33b.txt')
 #data = open('input.txt')
-#1--18284 неверно
-#2--58701760 верно
-kolvo = int(data.readline())
-summa, razn = 0, []
-for i in range(kolvo):
-    inp = sorted(list(map(int, data.readline().split())), reverse=1)
-    a, b, c = inp[0], inp[1], inp[2]
-    summa += a + b
-    razn.append(abs(a - c))
-    razn.append(abs(b - c))
-if summa % 4 == 0:
-    print(summa)
+D = 4
+s, dmin = 0, [10001] * D
+n = int(data.readline())
+for i in range(n):
+    a, b, c = map(int, data.readline().split())
+    a, b, c = max(a, b, c), a + b + c - \
+        max(a, b, c) - min(a, b, c), min(a, b, c)
+    s += a + b
+    d = min(a - c, b - c)
+    r = d % D
+    if r > 0:
+        newdmin = dmin[:]
+        for k in range(1, D):
+            r0 = (r + k) % D
+            newdmin[r0] = min(d + dmin[k], dmin[r0])
+        newdmin[r] = min(d, dmin[r])
+        dmin = newdmin[:]
+if s % D == 0:
+    print(s)
 else:
-    for i in sorted(razn):
-        if (summa - i) % 4 == 0:
-            print(summa - i)
-            break
+    print(s - dmin[s % D])
+# 1==18380 verno
+# 2==58701760 verno
