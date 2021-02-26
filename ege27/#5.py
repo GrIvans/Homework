@@ -20,5 +20,5 @@ if s % D == 0:
     print(s)
 else:
     print(s + dMin[D - (s % D)])
-# 1==75960
-# 2==203343860
+# 1==75960 verno
+# 2==203343860 verno
