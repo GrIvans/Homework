@@ -1,5 +1,5 @@
 data = open('27data/5/27-5a.txt')
-data = open('27data/5/27-5b.txt')
+#data = open('27data/5/27-5b.txt')
 #data = open('input.txt')
 D = 5
 s, dMin = 0, [10001] * D
@@ -15,6 +15,10 @@ for i in range(n):
             r0 = (r + k) % D
             dMinNew[r0] = min(d + dMin[k], dMin[r0])
         dMinNew[r] = min(d, dMin[r])
-        dmin = dMinNew[:]
+        dMin = dMinNew[:]
 if s % D == 0:
-    
+    print(s)
+else:
+    print(s + dMin[D - (s % D)])
+# 1==75960
+# 2==203343860
