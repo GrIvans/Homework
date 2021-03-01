@@ -9,7 +9,7 @@ def prost(a):
 
 def delit(a):
     mn = 100001
-    m = ()
+    m = 0
     for i in range(2, int(a**.5) + 1):
         if a % i == 0:
             if prost(i) and prost(a // i) and a != a // i:
@@ -19,14 +19,25 @@ def delit(a):
     return m
 
 
+def kostil(a):
+    mn = 100001
+    m = 0
+    for i in range(2, int(a**.5) + 1):
+        if a % i == 0:
+            if prost(i) and prost(a // i) and a != a // i:
+                return True
+    return False
+
+
 mn = 10001
 m = 0
 k = 0
 for i in range(153732, 225675):
     s = delit(i)
-    if s != 100001:
-        k += 1
-        if m < mn:
-            mn = m
+    if s > 0:
+        if s < mn:
+            mn = s
             m = i
+    if kostil(i):
+        k += 1
 print(k, m)
