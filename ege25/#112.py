@@ -1,6 +1,6 @@
 def prost(a):
     for i in range(2, int(a**.5) + 1):
-        if a % 2 == 0:
+        if a % i == 0:
             return False
     return True
 
@@ -9,15 +9,20 @@ def delit(a):
     for i in range(2, int(a**.5) + 1):
         if a % i == 0:
             if i != a // i and prost(i) and prost(a // i):
-                if i % 10 == (a // i) % 10:
-                    return True
+                return True
     return False
 
 
-mx = 0
-k = 0
-for i in range(237981, 309877):
+a = []
+for i in range(298435, 363249 + 1):
     if delit(i):
-        k += 1
-        mx = i
-print(k, mx)
+        a.append(i)
+sr = sum(a) / len(a)
+
+mn = 10001
+ans = 0
+for i in (a):
+    if abs(sr - i) < mn:
+        mn = abs(sr - i)
+        ans = i
+print(len(a), ans)
