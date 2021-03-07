@@ -12,7 +12,7 @@ def delit(a):
     m = 0
     for i in range(2, int(a**.5) + 1):
         if a % i == 0:
-            if prost(i) and prost(a // i) and a != a // i:
+            if prost(i) and prost(a // i) and i != a // i:
                 if a // i - i < mn:
                     mn = a // i - i
                     m = abs(i - a // i)
@@ -24,7 +24,7 @@ def kostil(a):
     m = 0
     for i in range(2, int(a**.5) + 1):
         if a % i == 0:
-            if prost(i) and prost(a // i) and a != a // i:
+            if prost(i) and prost(a // i) and i != a // i:
                 return True
     return False
 
