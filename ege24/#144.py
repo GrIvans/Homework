@@ -10,3 +10,4 @@ for i in range(1, len(s)):
             k += 1
         n = s[i]
 print(k)
+# verno

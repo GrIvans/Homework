@@ -11,3 +11,4 @@ for i in range(1, len(s) - 1):
         mx_ln = max(mx_ln, ln)
         ln = 2
 print(mx_ln)
+# verno
